@@ -7,8 +7,9 @@ app.use(express.static('public'))
 
 app.set('view engine', 'pug')
 
+// have to include 'showdata' property as index.pug requires that data
 app.get('/', (request, response) => {
-  return response.render('index')
+  return response.render('index', { showdata })
 })
 
 app.get('/season/:id', (request, response) => {
